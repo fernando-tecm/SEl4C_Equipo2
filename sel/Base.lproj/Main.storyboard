@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GoS-1e-3O9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GoS-1e-3O9">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -327,6 +328,12 @@
                     <view key="view" contentMode="scaleToFill" id="LL9-FB-Nyw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" fixedFrame="YES" image="Captura de pantalla 2023-09-01 a la(s) 17.38.25" translatesAutoresizingMaskIntoConstraints="NO" id="DYZ-eB-4jw">
+                                <rect key="frame" x="0.0" y="48" width="393" height="710"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0yL-va-2lg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -334,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyy-mc-olb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4524" y="760"/>
+            <point key="canvasLocation" x="4521.3740458015263" y="759.85915492957747"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I2l-KZ-wPg">
@@ -361,6 +368,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="qao-Yq-KCm"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Vg-Za-2Sa">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
@@ -389,6 +397,7 @@
         <image name="Captura de Pantalla 2023-08-31 a la(s) 21.29.42" width="326" height="648"/>
         <image name="Captura de Pantalla 2023-08-31 a la(s) 21.29.56" width="326" height="648"/>
         <image name="Captura de Pantalla 2023-08-31 a la(s) 21.30.24" width="332" height="702"/>
+        <image name="Captura de pantalla 2023-09-01 a la(s) 17.38.25" width="582" height="1172"/>
         <image name="Rounded Star (2)" width="45" height="34"/>
         <image name="habitos" width="50" height="50"/>
         <image name="profile-png-icon-2.jpg (1) (1)" width="46" height="45"/>
