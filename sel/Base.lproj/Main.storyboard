@@ -22,13 +22,13 @@
                                     <constraint firstAttribute="height" constant="100" id="UYS-Cm-C4e"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Waw-TF-tEH" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Waw-TF-tEH">
                                 <rect key="frame" x="20" y="409" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xIp-dg-8ZE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="azulNormal" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVE-It-Tms">
                                 <rect key="frame" x="40" y="489" width="313" height="50"/>
@@ -38,7 +38,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Ingresar"/>
                                 <connections>
-                                    <segue destination="1nd-20-RhU" kind="presentation" modalPresentationStyle="fullScreen" id="isO-Ft-B5c"/>
+                                    <action selector="Access:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qb-eT-ivl"/>
+                                    <segue destination="1nd-20-RhU" kind="presentation" identifier="IngresarToPreEncuesta" modalPresentationStyle="fullScreen" id="DPn-uX-3vl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="azulFuerte" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXN-z6-Yit">
@@ -58,13 +59,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPT-yY-0RY" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nPT-yY-0RY">
                                 <rect key="frame" x="20" y="329" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="beV-DV-rrE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -94,7 +95,8 @@
                         <outlet property="buttonIngresar" destination="GVE-It-Tms" id="No7-0E-KyT"/>
                         <outlet property="buttonRegistrarse" destination="qXN-z6-Yit" id="NHw-EI-Bcc"/>
                         <outlet property="layerNombre" destination="nPT-yY-0RY" id="Bls-0Y-Cwh"/>
-                        <outlet property="layerPassword" destination="Waw-TF-tEH" id="Qrs-T7-VZF"/>
+                        <outlet property="layerNombreUsuario" destination="nPT-yY-0RY" id="q3F-s9-SrQ"/>
+                        <outlet property="layerPassword" destination="Waw-TF-tEH" id="sQb-oF-BkQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,7 +117,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1v-4W-23a" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F1v-4W-23a">
                                 <rect key="frame" x="20" y="226.33333333333334" width="157" height="50.000000000000028"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="otH-IE-Xx5"/>
@@ -123,7 +125,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Género" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ar-Hg-Nny" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Género" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ar-Hg-Nny">
                                 <rect key="frame" x="216" y="296.33333333333331" width="157" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3CF-Re-egD"/>
@@ -131,7 +133,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UeK-Nb-N42" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edad" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UeK-Nb-N42">
                                 <rect key="frame" x="20" y="296.33333333333331" width="157" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="TIl-tX-OXh"/>
@@ -139,7 +141,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="País" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-1M-NJe" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="País" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="raZ-1M-NJe">
                                 <rect key="frame" x="216" y="226.33333333333334" width="157" height="50.000000000000028"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vfn-py-Yyj"/>
@@ -147,7 +149,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgH-J1-sK1" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electrónico" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgH-J1-sK1">
                                 <rect key="frame" x="20" y="376.33333333333331" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jgJ-yN-dsb"/>
@@ -155,7 +157,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LnX-YM-lLq" customClass="LoginTextfields" customModule="sel" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LnX-YM-lLq">
                                 <rect key="frame" x="20" y="456.33333333333331" width="353" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qFw-eh-PpE"/>
@@ -173,7 +175,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Registrarme"/>
                                 <connections>
+                                    <action selector="AlreadyRegistered:" destination="oLY-C3-cnf" eventType="touchUpInside" id="8cZ-dq-68w"/>
                                     <action selector="buttonRegistrarme:" destination="sep-BI-S7L" eventType="touchUpInside" id="OvG-Ik-wwD"/>
+                                    <segue destination="1nd-20-RhU" kind="presentation" identifier="AccessToPreTest" modalPresentationStyle="fullScreen" id="4Ss-Pa-1p2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Ya tienes una cuenta?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fI-33-9Sa">
@@ -194,6 +198,21 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="OVT-Kb-wDT"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Términos y condiciones" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="asA-WZ-PpG">
+                                <rect key="frame" x="194" y="543" width="185" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Estoy de acuerdo con" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otZ-EY-ci9">
+                                <rect key="frame" x="55" y="552" width="140" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z4h-QK-gWt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -229,6 +248,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6nE-ja-BbV"/>
                     <connections>
+                        <outlet property="TerminosYCondiciones" destination="asA-WZ-PpG" id="JqI-me-Ri2"/>
                         <outlet property="buttonRegistrarme" destination="z26-al-8yH" id="ZMu-1j-6DN"/>
                         <outlet property="layerEdad" destination="UeK-Nb-N42" id="xpi-iY-k96"/>
                         <outlet property="layerEmail" destination="xgH-J1-sK1" id="5FM-Fg-QZw"/>
@@ -241,7 +261,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ROO-8t-ZZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sep-BI-S7L" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1063" y="947"/>
+            <point key="canvasLocation" x="1055.7251908396945" y="946.47887323943667"/>
         </scene>
         <!--View Pre Encuesta-->
         <scene sceneID="sMS-zP-9Gm">
@@ -400,6 +420,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="userAnswer:" destination="R2M-7v-qz8" eventType="touchUpInside" id="3t4-m1-38Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0q-gc-qC5">
                                         <rect key="frame" x="0.0" y="70" width="333" height="50"/>
@@ -412,6 +435,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="userAnswer:" destination="R2M-7v-qz8" eventType="touchUpInside" id="laU-ng-2sa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIa-so-Drh">
                                         <rect key="frame" x="0.0" y="140" width="333" height="50"/>
@@ -424,6 +450,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="userAnswer:" destination="R2M-7v-qz8" eventType="touchUpInside" id="PXm-Us-fRs"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foc-aR-l4G">
                                         <rect key="frame" x="0.0" y="210" width="333" height="50"/>
@@ -436,6 +465,9 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="userAnswer:" destination="R2M-7v-qz8" eventType="touchUpInside" id="8za-Le-Yr6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEp-No-DFy">
                                         <rect key="frame" x="0.0" y="280" width="333" height="50"/>
@@ -443,6 +475,9 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Totalmente de acuerdo">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="userAnswer:" destination="R2M-7v-qz8" eventType="touchUpInside" id="oNj-d1-g6v"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -479,6 +514,7 @@
                         <outlet property="buttonDesacuerdo" destination="K0q-gc-qC5" id="hnj-AX-OaK"/>
                         <outlet property="buttonNiAcuerdoNiDesacuerdo" destination="bIa-so-Drh" id="syW-69-WrR"/>
                         <outlet property="buttonTotalmenteAcuerdo" destination="eEp-No-DFy" id="Baa-tl-kfl"/>
+                        <outlet property="buttonTotalmenteDesacuerdo" destination="UgV-ch-Ou5" id="ign-Vn-wg4"/>
                         <outlet property="labelNumPregunta" destination="ifq-Hp-CF5" id="3Xo-jW-YE3"/>
                         <outlet property="labelPregunta" destination="LsC-VQ-Ld9" id="Tj4-AQ-9qa"/>
                         <outlet property="labelTipoPregunta" destination="rsl-fb-khF" id="oVs-qj-Eyp"/>
@@ -495,19 +531,8 @@
                     <view key="view" contentMode="scaleToFill" id="nxZ-Lb-LKs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Captura de Pantalla 2023-08-31 a la(s) 21.29.42" translatesAutoresizingMaskIntoConstraints="NO" id="zJs-Lh-aZh">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cYi-hs-3g1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="cYi-hs-3g1" firstAttribute="trailing" secondItem="zJs-Lh-aZh" secondAttribute="trailing" id="2GE-Oq-Z5f"/>
-                            <constraint firstItem="zJs-Lh-aZh" firstAttribute="leading" secondItem="cYi-hs-3g1" secondAttribute="leading" id="Lhc-hI-xbx"/>
-                            <constraint firstItem="cYi-hs-3g1" firstAttribute="bottom" secondItem="zJs-Lh-aZh" secondAttribute="bottom" id="Sab-GK-Gla"/>
-                            <constraint firstItem="zJs-Lh-aZh" firstAttribute="top" secondItem="cYi-hs-3g1" secondAttribute="top" id="hHC-Az-rRv"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Actividades" id="9a3-o4-9FX"/>
                 </viewController>
@@ -515,10 +540,10 @@
             </objects>
             <point key="canvasLocation" x="3111" y="744"/>
         </scene>
-        <!--View Controller-->
+        <!--View Perfil-->
         <scene sceneID="ZYD-QD-088">
             <objects>
-                <viewController id="quZ-N2-wMw" sceneMemberID="viewController">
+                <viewController id="quZ-N2-wMw" customClass="ViewPerfil" customModule="sel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LL9-FB-Nyw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -572,12 +597,15 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4Ss-Pa-1p2"/>
         <segue reference="OVT-Kb-wDT"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Captura de Pantalla 2023-08-31 a la(s) 21.29.42" width="326" height="648"/>
         <image name="logo" width="1167" height="403"/>
         <image name="profile-png-icon-2.jpg (1) (1)" width="46" height="45"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

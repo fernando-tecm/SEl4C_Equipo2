@@ -13,24 +13,33 @@ class ViewRegistro: UIViewController {
     @IBOutlet weak var buttonRegistrarme: UIButton!
     
     
-    @IBOutlet weak var layerNombre: LoginTextfields!
+    @IBOutlet weak var layerNombre: UITextField!
     
-    @IBOutlet weak var layerPais: LoginTextfields!
+    @IBOutlet weak var layerPais: UITextField!
     
-    @IBOutlet weak var layerGenero: LoginTextfields!
+    @IBOutlet weak var layerGenero: UITextField!
     
-    @IBOutlet weak var layerEdad: LoginTextfields!
+    @IBOutlet weak var layerEdad: UITextField!
     
-    @IBOutlet weak var layerEmail: LoginTextfields!
+    @IBOutlet weak var layerEmail: UITextField!
     
-    @IBOutlet weak var layerPassword: LoginTextfields!
+    @IBOutlet weak var layerPassword: UITextField!
+    
+    @IBOutlet weak var TerminosYCondiciones: UITextView!
+    
+    private var registerVM = RegisterViewModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         estiloBotones()
-        // Do any additional setup after loading the view.
-
+        
+        //Link para los terminos y condiciones
+        TerminosYCondiciones.dataDetectorTypes = .link
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openLink))
+        TerminosYCondiciones.addGestureRecognizer(tapGesture)
     }
     
     func estiloBotones(){
@@ -63,4 +72,26 @@ class ViewRegistro: UIViewController {
         layerEmail.layer.borderColor = UIColor.black.cgColor
         
     }
+    
+    @objc func openLink(sender: UITapGestureRecognizer) {
+        if let url = URL(string: "https://tec.mx/es/aviso-de-privacidad-sel4c") {
+            UIApplication.shared.open(url, options: [:],completionHandler: nil)
+        }
+    }
+    
+    
+    @IBAction func AlreadyRegistered(_ sender: UIButton) {
+        let enteredUsername = layerNombre.text
+        let enteredPassword = layerPassword.text
+        let enteredCountry = layerPais.text
+        let enteredAge = layerEdad.text
+        let enteredEmail = layerEmail.text
+        let enteredGender = layerGenero.text
+        if enteredUsername == registerVM.username && enteredPassword == registerVM.password && enteredCountry == registerVM.country && enteredAge == registerVM.age && enteredEmail == registerVM.email && enteredGender == registerVM.gender {
+            registerVM.Register()
+            performSegue(withIdentifier: "AccessToPreTest", sender: self)
+        }
+    }
+    
+    
 }

@@ -8,24 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     
     @IBOutlet weak var buttonIngresar: UIButton!
     
     
-    @IBOutlet weak var buttonRegistrarse: UIButton!
+    @IBOutlet weak var buttonRegistrarse: UIButton!    
     
+    @IBOutlet weak var layerNombreUsuario: UITextField!
     
-    @IBOutlet weak var layerNombre: LoginTextfields!
+    @IBOutlet weak var layerPassword: UITextField!
     
-    @IBOutlet weak var layerPassword: LoginTextfields!
+    private var loginVM = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         estiloBotones()
         // Do any additional setup after loading the view.
-
+        
     }
     
     func estiloBotones(){
@@ -37,9 +38,9 @@ class ViewController: UIViewController {
         buttonRegistrarse.layer.cornerRadius = 25
         buttonRegistrarse.clipsToBounds = true
         
-        layerNombre.layer.cornerRadius = 25
-        layerNombre.layer.borderWidth = 1
-        layerNombre.layer.borderColor = UIColor.black.cgColor
+        layerNombreUsuario.layer.cornerRadius = 25
+        layerNombreUsuario.layer.borderWidth = 1
+        layerNombreUsuario.layer.borderColor = UIColor.black.cgColor
         
         layerPassword.layer.cornerRadius = 25
         layerPassword.layer.borderWidth = 1
@@ -47,7 +48,23 @@ class ViewController: UIViewController {
         
     }
     
-
-
+    @IBAction func Access(_ sender: UIButton) {
+        
+        if let enteredNombreUsuario = layerNombreUsuario.text,
+           let enteredPassword = layerPassword.text,
+           enteredNombreUsuario == loginVM.username && enteredPassword == loginVM.password {
+            loginVM.Login()
+            performSegue(withIdentifier: "IngresarToPreEncuesta", sender: self)
+        
+        }
+            
+        
+    }
+    
+    
+    
+        
+        
+        
 }
 
