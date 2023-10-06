@@ -31,6 +31,80 @@ class ViewCuestInicial: UIViewController {
     var userResponses = UserResponses()
     var userResponsesController = UserResponsesController()
     
+    struct Question: Codable {
+        var id: Int
+        var question: String
+        var type: String
+    }
+
+    struct Answer: Codable {
+        var question: Question
+        var answer: Int
+    }
+
+    struct UserResponses: Codable {
+        var user: String
+        var responses: [Answer]
+    }
+
+    enum QuestionError: LocalizedError {
+        case serverError
+        case itemNotFound
+        
+        var errorDescription: String? {
+            switch self {
+            case .serverError:
+                return "A server error occurred."
+            case .itemNotFound:
+                return "The item was not found."
+            }
+        }
+    }
+
+    enum UserResponsesError: LocalizedError {
+        case serverError
+        case itemNotFound
+        
+        var errorDescription: String? {
+            switch self {
+            case .serverError:
+                return "A server error occurred."
+            case .itemNotFound:
+                return "The item was not found."
+            }
+        }
+    }
+    
+    extension Question {
+        static func fetchQuestions() async throws -> [Question] {
+            let url = URL(string: "http://localhost:3000/questions")!
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw QuestionError.serverError
+            }
+            let questions = try JSONDecoder().decode([Question].self, from: data)
+            return questions
+        }
+    }
+    
+    class UserResponsesController {
+        func insertUserResponses(newUserResponses: UserResponses) async throws {
+            let url = URL(string: "http://localhost:3000/questions_results")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let jsonData = try JSONEncoder().encode(newUserResponses)
+            request.httpBody = jsonData
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                throw UserResponsesError.serverError
+            }
+        }
+    }
+
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         estiloBotones()
@@ -38,7 +112,7 @@ class ViewCuestInicial: UIViewController {
         Task{
             do{
                 let questions = try await Question.fetchQuestions()
-                updateUI(with: questions)
+                updateUI(with: [questions])
             }catch{
                 displayError(QuestionError.itemNotFound, title: "No se pudo accer a las preguntas")
             }

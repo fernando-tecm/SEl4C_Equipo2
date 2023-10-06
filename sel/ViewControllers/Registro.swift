@@ -28,7 +28,7 @@ class ViewRegistro: UIViewController {
     @IBOutlet weak var TerminosYCondiciones: UITextView!
     
     private var registerVM = RegisterViewModel()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,17 +81,35 @@ class ViewRegistro: UIViewController {
     
     
     @IBAction func AlreadyRegistered(_ sender: UIButton) {
-        let enteredUsername = layerNombre.text
-        let enteredPassword = layerPassword.text
-        let enteredCountry = layerPais.text
-        let enteredAge = layerEdad.text
-        let enteredEmail = layerEmail.text
-        let enteredGender = layerGenero.text
-        if enteredUsername == registerVM.username && enteredPassword == registerVM.password && enteredCountry == registerVM.country && enteredAge == registerVM.age && enteredEmail == registerVM.email && enteredGender == registerVM.gender {
-            registerVM.Register()
-            performSegue(withIdentifier: "AccessToPreTest", sender: self)
-        }
-    }
-    
-    
+        guard
+               let username = layerNombre.text,
+               let password = layerPassword.text,
+               let country = layerPais.text,
+               let age = layerEdad.text,
+               let email = layerEmail.text,
+               let gender = layerGenero.text
+           else {
+               return
+           }
+           let webService = Webservice()
+           
+           webService.register(
+               username: username,
+               password: password,
+               country: country,
+               gender: gender,
+               age: age,
+               email: email
+           ) { [weak self] result in
+               DispatchQueue.main.async {
+                   switch result {
+                   case .success(let values):
+                       print("Registration successful: \(values)")
+                       self?.performSegue(withIdentifier: "AccessToPreTest", sender: self)
+                   case .failure(let error):
+                       print("Registration failed: \(error)")
+                   }
+               }
+           }
+       }
 }
