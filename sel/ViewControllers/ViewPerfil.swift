@@ -10,15 +10,18 @@ import UIKit
 class ViewPerfil: UIViewController {
 
     
+    @IBOutlet weak var formaView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         estiloBotones()
-        view.backgroundColor = UIColor(named:"azulTec")
-        // Do any additional setup after loading the view.
+        formaView.backgroundColor = UIColor(named:"azulTec")
+        
+        
     }
     
     func estiloBotones(){
-       
+        formaView.layer.cornerRadius = 15
     }
 
 

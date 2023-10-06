@@ -28,6 +28,7 @@
 		2EB795182AA179CC007FA8EF /* selUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB795172AA179CC007FA8EF /* selUITests.swift */; };
 		2EB7951A2AA179CC007FA8EF /* selUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB795192AA179CC007FA8EF /* selUITestsLaunchTests.swift */; };
 		2EEACD2C2AB3AB0B00127454 /* ViewPreEncuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEACD2B2AB3AB0B00127454 /* ViewPreEncuesta.swift */; };
+		8D9AB3CF2ACE3F6900FF46A8 /* ActividadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AB3CE2ACE3F6900FF46A8 /* ActividadesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		2EB795172AA179CC007FA8EF /* selUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selUITests.swift; sourceTree = "<group>"; };
 		2EB795192AA179CC007FA8EF /* selUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2EEACD2B2AB3AB0B00127454 /* ViewPreEncuesta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreEncuesta.swift; sourceTree = "<group>"; };
+		8D9AB3CE2ACE3F6900FF46A8 /* ActividadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActividadesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				2E3E5A142AC36C3500E02774 /* Registro.swift */,
 				2E3E5A172AC385F300E02774 /* ViewCuestInicial.swift */,
 				2EAE07FA2ACA3D5500CF9C94 /* ViewPerfil.swift */,
+				8D9AB3CE2ACE3F6900FF46A8 /* ActividadesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				2E1402112ACC8BFB00A07382 /* Questions.swift in Sources */,
 				2E3E5A152AC36C3500E02774 /* Registro.swift in Sources */,
 				2E3E5A1E2AC6109000E02774 /* LoginViewModel.swift in Sources */,
+				8D9AB3CF2ACE3F6900FF46A8 /* ActividadesViewController.swift in Sources */,
 				2EB794F92AA179C5007FA8EF /* SceneDelegate.swift in Sources */,
 				2E1402152ACC8DA700A07382 /* UserResponses.swift in Sources */,
 				2E1402192ACC8DED00A07382 /* Answer.swift in Sources */,
