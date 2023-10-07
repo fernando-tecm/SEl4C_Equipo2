@@ -9,11 +9,16 @@ import UIKit
 
 
 
+
 class ActividadesViewController: UIViewController {
     
     
+    @IBOutlet weak var actView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+
+
 }
