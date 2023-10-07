@@ -91,6 +91,7 @@ class ViewRegistro: UIViewController {
            else {
                return
            }
+        print(username,password,country,age,email,gender)
            let webService = Webservice()
            
            webService.register(

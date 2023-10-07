@@ -30,7 +30,7 @@ class ViewCuestInicial: UIViewController {
     var engine=EcomplexityEngine()
     var userResponses = UserResponses()
     var userResponsesController = UserResponsesController()
-    
+    /*
     struct Question: Codable {
         var id: Int
         var question: String
@@ -103,7 +103,7 @@ class ViewCuestInicial: UIViewController {
         }
     }
 
-
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +118,7 @@ class ViewCuestInicial: UIViewController {
             }
         }
     }
+     */
     
     func estiloBotones(){
         

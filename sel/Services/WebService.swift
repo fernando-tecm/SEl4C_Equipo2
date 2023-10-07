@@ -45,7 +45,7 @@ struct RegisterResponse: Codable {
 class Webservice {
     func login(username: String, password: String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
         
-        guard let url = URL(string: "localhost:3001/users") else {
+        guard let url = URL(string: "http://localhost:3001/users") else {
             completion(.failure(.custom(errorMessage: "URL is not correct")))
             return
         }
@@ -80,7 +80,7 @@ class Webservice {
     
     func register(username: String, password: String, country: String, gender: String, age: String, email: String, completion: @escaping (Result<String, AuthenticationError>) -> Void){
         
-        guard let url = URL(string: "localhost:3001/register") else {
+        guard let url = URL(string: "http://localhost:3001/users") else {
             completion(.failure(.custom(errorMessage: "URL is not correct")))
             return
         }
