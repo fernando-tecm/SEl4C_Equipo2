@@ -118,7 +118,7 @@ class ViewCuestInicial: UIViewController {
             }
         }
     }
-     */
+    
     
     func estiloBotones(){
         
@@ -227,6 +227,7 @@ class ViewCuestInicial: UIViewController {
             self.present(alert,animated: true)
         }
     }
+     */
     func displayErrorUserResponses(_ error: Error, title: String) {
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)

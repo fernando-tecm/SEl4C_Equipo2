@@ -52,7 +52,7 @@ class ViewController: UIViewController {
         
         if let enteredNombreUsuario = layerNombreUsuario.text,
            let enteredPassword = layerPassword.text,
-           enteredNombreUsuario == loginVM.username && enteredPassword == loginVM.password {
+           enteredNombreUsuario == loginVM.name && enteredPassword == loginVM.password {
             loginVM.Login()
             performSegue(withIdentifier: "IngresarToPreEncuesta", sender: self)
         

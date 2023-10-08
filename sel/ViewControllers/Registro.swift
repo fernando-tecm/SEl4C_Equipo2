@@ -27,6 +27,7 @@ class ViewRegistro: UIViewController {
     
     @IBOutlet weak var TerminosYCondiciones: UITextView!
     
+    @IBOutlet weak var layerUniversidad: UITextField!
     private var registerVM = RegisterViewModel()
     
     
@@ -67,6 +68,10 @@ class ViewRegistro: UIViewController {
         layerGenero.layer.borderWidth = 1
         layerGenero.layer.borderColor = UIColor.black.cgColor
         
+        layerUniversidad.layer.cornerRadius = 25
+        layerUniversidad.layer.borderWidth = 1
+        layerUniversidad.layer.borderColor = UIColor.black.cgColor
+        
         layerEmail.layer.cornerRadius = 25
         layerEmail.layer.borderWidth = 1
         layerEmail.layer.borderColor = UIColor.black.cgColor
@@ -85,9 +90,11 @@ class ViewRegistro: UIViewController {
                let username = layerNombre.text,
                let password = layerPassword.text,
                let country = layerPais.text,
-               let age = layerEdad.text,
+               let ageText = layerEdad.text,
+                let age = Int(ageText),
                let email = layerEmail.text,
-               let gender = layerGenero.text
+               let gender = layerGenero.text,
+               let universidad = layerUniversidad.text
            else {
                return
            }
@@ -95,12 +102,13 @@ class ViewRegistro: UIViewController {
            let webService = Webservice()
            
            webService.register(
-               username: username,
-               password: password,
-               country: country,
+            name: username,
+            password: password,
+            country_id: country,
                gender: gender,
                age: age,
-               email: email
+               email: email,
+               university: universidad
            ) { [weak self] result in
                DispatchQueue.main.async {
                    switch result {
