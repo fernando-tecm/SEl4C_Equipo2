@@ -28,9 +28,14 @@
 		2EB795182AA179CC007FA8EF /* selUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB795172AA179CC007FA8EF /* selUITests.swift */; };
 		2EB7951A2AA179CC007FA8EF /* selUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB795192AA179CC007FA8EF /* selUITestsLaunchTests.swift */; };
 		2EEACD2C2AB3AB0B00127454 /* ViewPreEncuesta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEACD2B2AB3AB0B00127454 /* ViewPreEncuesta.swift */; };
+<<<<<<< HEAD
 		8D73E4322AD2364100F037B2 /* Actividad2ViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E4312AD2364100F037B2 /* Actividad2ViewControler.swift */; };
 		8D73E4362AD24A3700F037B2 /* Act3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E4352AD24A3700F037B2 /* Act3ViewController.swift */; };
 		8D73E4382AD24CE600F037B2 /* Act4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E4372AD24CE600F037B2 /* Act4ViewController.swift */; };
+=======
+		576DCF232AD23C4700F10155 /* ViewCuestFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576DCF222AD23C4700F10155 /* ViewCuestFinal.swift */; };
+		8D73E3F02AD13A3300F037B2 /* Activitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73E3EF2AD13A3300F037B2 /* Activitys.swift */; };
+>>>>>>> IOS
 		8D9AB3CF2ACE3F6900FF46A8 /* ActividadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AB3CE2ACE3F6900FF46A8 /* ActividadesViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,9 +82,14 @@
 		2EB795172AA179CC007FA8EF /* selUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selUITests.swift; sourceTree = "<group>"; };
 		2EB795192AA179CC007FA8EF /* selUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2EEACD2B2AB3AB0B00127454 /* ViewPreEncuesta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreEncuesta.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		8D73E4312AD2364100F037B2 /* Actividad2ViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actividad2ViewControler.swift; sourceTree = "<group>"; };
 		8D73E4352AD24A3700F037B2 /* Act3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act3ViewController.swift; sourceTree = "<group>"; };
 		8D73E4372AD24CE600F037B2 /* Act4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Act4ViewController.swift; sourceTree = "<group>"; };
+=======
+		576DCF222AD23C4700F10155 /* ViewCuestFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCuestFinal.swift; sourceTree = "<group>"; };
+		8D73E3EF2AD13A3300F037B2 /* Activitys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activitys.swift; sourceTree = "<group>"; };
+>>>>>>> IOS
 		8D9AB3CE2ACE3F6900FF46A8 /* ActividadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActividadesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,9 +127,13 @@
 				2E3E5A172AC385F300E02774 /* ViewCuestInicial.swift */,
 				2EAE07FA2ACA3D5500CF9C94 /* ViewPerfil.swift */,
 				8D9AB3CE2ACE3F6900FF46A8 /* ActividadesViewController.swift */,
+<<<<<<< HEAD
 				8D73E4312AD2364100F037B2 /* Actividad2ViewControler.swift */,
 				8D73E4352AD24A3700F037B2 /* Act3ViewController.swift */,
 				8D73E4372AD24CE600F037B2 /* Act4ViewController.swift */,
+=======
+				576DCF222AD23C4700F10155 /* ViewCuestFinal.swift */,
+>>>>>>> IOS
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -347,6 +361,7 @@
 				8D73E4382AD24CE600F037B2 /* Act4ViewController.swift in Sources */,
 				2E1402192ACC8DED00A07382 /* Answer.swift in Sources */,
 				2E3E5A182AC385F300E02774 /* ViewCuestInicial.swift in Sources */,
+				576DCF232AD23C4700F10155 /* ViewCuestFinal.swift in Sources */,
 				2E1402132ACC8D0E00A07382 /* EcomplexityEngine.swift in Sources */,
 				8D73E4362AD24A3700F037B2 /* Act3ViewController.swift in Sources */,
 			);

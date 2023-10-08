@@ -30,7 +30,7 @@ class ViewCuestInicial: UIViewController {
     var engine=EcomplexityEngine()
     var userResponses = UserResponses()
     var userResponsesController = UserResponsesController()
-    
+    /*
     struct Question: Codable {
         var id: Int
         var question: String
@@ -103,7 +103,7 @@ class ViewCuestInicial: UIViewController {
         }
     }
 
-
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +118,7 @@ class ViewCuestInicial: UIViewController {
             }
         }
     }
+    
     
     func estiloBotones(){
         
@@ -176,7 +177,7 @@ class ViewCuestInicial: UIViewController {
     
     @IBAction func userAnswer(_ sender: UIButton) {
         let answer = sender.titleLabel?.text
-        let question = Question(id: engine.getId(),text: engine.getTextQuestion(), typeQuestion: engine.getTypeQuestion())
+        let question = Question(id: engine.getId(),question: engine.getTextQuestion(), type: engine.getTypeQuestion())
         var ans = Answer(question: question, answer: 0)
         switch answer!{
         case let str where str.contains("Nada de acuerdo"):
@@ -226,6 +227,7 @@ class ViewCuestInicial: UIViewController {
             self.present(alert,animated: true)
         }
     }
+     */
     func displayErrorUserResponses(_ error: Error, title: String) {
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)

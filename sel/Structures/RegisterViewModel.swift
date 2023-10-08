@@ -8,18 +8,19 @@
 import Foundation
 
 class RegisterViewModel {
-    var username: String = ""
+    var name: String = ""
     var password: String = ""
     var email: String = ""
     var gender: String = ""
-    var country: String = ""
-    var age: String = ""
+    var country_id: String = ""
+    var age: Int = 0
+    var university: String = ""
     
     func Register() {
         
         let defaults = UserDefaults.standard
         
-        Webservice().register(username: username, password: password, country: country, gender: gender, age: age,email: email) { result in
+        Webservice().register(name: name, password: password, country_id: country_id, gender: gender, age: age,email: email, university: university) { result in
             switch result {
             case .success(let values):
                 defaults.setValue(values, forKey: "../db")

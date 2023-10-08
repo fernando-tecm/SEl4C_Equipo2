@@ -13,7 +13,7 @@ enum AuthenticationError: Error {
 }
 
 struct LoginRequestBody: Codable {
-    let username: String
+    let name: String
     let password: String
 }
 
@@ -26,12 +26,13 @@ struct LoginResponse : Codable {
 //----------------------------------------
 
 struct RegisterRequestBody: Codable {
-    let username: String
+    let name: String
     let password: String
     let email: String
     let gender: String
-    let country: String
-    let age: String
+    let country_id: String
+    let age: Int
+    let university: String
     
 }
 
@@ -43,14 +44,14 @@ struct RegisterResponse: Codable {
 
 //----------------------------------------
 class Webservice {
-    func login(username: String, password: String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
+    func login(name: String, password: String, completion: @escaping (Result<String, AuthenticationError>) -> Void) {
         
-        guard let url = URL(string: "localhost:3001/users") else {
+        guard let url = URL(string: "http://localhost:3001/users") else {
             completion(.failure(.custom(errorMessage: "URL is not correct")))
             return
         }
         
-        let body = LoginRequestBody(username: username, password: password)
+        let body = LoginRequestBody(name: name, password: password)
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -78,14 +79,14 @@ class Webservice {
         } .resume()
     }
     
-    func register(username: String, password: String, country: String, gender: String, age: String, email: String, completion: @escaping (Result<String, AuthenticationError>) -> Void){
+    func register(name: String, password: String, country_id: String, gender: String, age: Int, email: String, university: String,completion: @escaping (Result<String, AuthenticationError>) -> Void){
         
-        guard let url = URL(string: "localhost:3001/register") else {
+        guard let url = URL(string: "http://localhost:3001/users") else {
             completion(.failure(.custom(errorMessage: "URL is not correct")))
             return
         }
         
-        let body = RegisterRequestBody(username: username, password: password, email:email, gender: gender, country: country, age:age)
+        let body = RegisterRequestBody(name: name, password: password, email:email, gender: gender, country_id: country_id, age:age, university:university)
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -93,6 +94,8 @@ class Webservice {
         request.httpBody = try? JSONEncoder().encode(body)
         
         URLSession.shared.dataTask(with: request) {(data,response, error) in
+            print("Response:", response)
+            print("Error:", error)
             guard let data = data, error == nil else {
                 completion(.failure(.custom(errorMessage: "No data")))
                 return
