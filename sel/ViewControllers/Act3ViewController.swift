@@ -1,58 +1,51 @@
 //
-//  ActividadesViewController.swift
+//  Act3ViewController.swift
 //  sel
 //
-//  Created by José Andrés Rodríguez Ruiz on 04/10/23.
+//  Created by José Andrés Rodríguez Ruiz on 07/10/23.
 //
 
 import UIKit
 
-
-
-class ActividadesViewController: UIViewController {
+class Act3ViewController: UIViewController{
     
-    
-    @IBOutlet weak var textView1: UITextView!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let bulletPoint: String = "\u{2022}" // El carácter de viñeta
                 
-        let firstNormalText = "1.Haz una lluvia de ideas sobre problemas sociales o ambientales que se dan en tu entorno."
+        let firstNormalText = "Antes de arrojarnos a proponer posibles soluciones, es importante que veamos que se hace al respecto en otros lugares. Para ello, te sugerimos que hagas una investigación sobre acciones concretas que se hacen internacional, nacional o localmente para atender el problema que elegiste."
         
         let firstListText = """
-        \n\(bulletPoint) ¿Cuáles identificas?
-        \(bulletPoint) Mínimo deben poder identificar 5 problemáticas.
-        \(bulletPoint) ¿Cómo te afectan estos problemas? ¿Has escuchado que le afecten a alguien cercano?
-        \(bulletPoint) ¿Por qué se consideran un problema?
+        \n\(bulletPoint) ¿Quién ha propuesto acciones para atender este problema -una empresa, una escuela, una persona, un gobierno, una asociación-?
+        \(bulletPoint) ¿Qué se hace?
+        \(bulletPoint) ¿Cómo ha mejorado estas acciones la vida de las personas?
         """
         
-        let secondNormalText = "\n 2.-Ahora, entrevista a una persona respecto a la misma idea:"
+        let secondNormalText = "\n Reflexiona sobre el hecho de que innovar no siempre es la generación de algo único u original, sino que muchas ocasiones, el innovar puede ser una adaptación a un entorno, momento o grupo poblacional concreto. En ocasiones, lo que se hace en otro contexto puede resultar novedoso en nuestra localidad, lo que lo vuelve innovador. O también, puede haber acciones que se apliquen a cierta población, pero que también pueda ser valioso para otros grupos.\n\n Por ejemplo: Acciones para reducir la basura en las empresas que puedan adaptarse para las escuelas; o acciones que se lleven a cabo en Colombia que podrían adoptarse para la propia ciudad o colonia. \n\n Una vez reflexionado esto, analiza las acciones que identificaste en el punto anterior, cuestionando:"
         
         let secondListText = """
-        \n\(bulletPoint) ¿Qué problemas ambientales o sociales identificas en tu casa, colonia o ciudad o país?
-        \(bulletPoint) ¿Por qué son un problema?
-        \(bulletPoint) ¿Quiénes intervienen en el problema?
-        \(bulletPoint) ¿Te has visto afectado por este problema? ¿Cómo?
+        \n\(bulletPoint) Si la solución que identificaste no es del lugar donde vives, ¿Se podría llevar a cabo en este?
+        \(bulletPoint) Si la solución que identificaste es del lugar donde vives, ¿Se podría aplicar en otra ciudad o país?
+        \(bulletPoint) ¿Quiénes más podrían adoptar la solución que identificaste? ¿Podría realizarse por tus profesores, tu familia o tus vecinos?
+        \(bulletPoint) ¿Cómo podrías sumarte? ¿Qué necesitarías?
+        \(bulletPoint) ¿Qué harías diferente? ¿Podrías mejorar algo?
+        \(bulletPoint) ¿Por qué sería una propuesta innovadora?
+        \(bulletPoint) ¿Qué nombre le pondrías a su propuesta de solución?
         """
         
-        let thirdNormalText = "\n3.Por último, has un recorrido por tu colonia o ciudad y registra lo que ves relacionado con la situación ambiental o social. Busca identificar situaciones que no te agraden o problemas ya identificados."
+        let thirdNormalText = "\n Como cierre de este proceso de ideación deberías poder identificar una acción concreta que pudieras adaptar, mejorar y proponer para resolver el problema elegido.."
         
-        let thirdListText = """
-        \n\(bulletPoint) ¿Que viste?
-        \(bulletPoint) ¿Dónde lo viste?
-        \(bulletPoint) ¿Había alguien ocasionándolo o atendiéndolo?
-        """
         
         let fourthNormalText = "\n¿Qué debes entregar?"
         
         let fourthListText = """
-        \n\(bulletPoint) Conclusión de la reflexión inicial
-        \(bulletPoint) Conclusión de la entrevista
-        \(bulletPoint) Tabla con el registro de lo observado
+        \n\(bulletPoint) Identificación de posibles soluciones internacionales, nacionales o locales
+        \(bulletPoint) Reflexión sobre la manera en que podrías adoptar y adaptar alguna de estas posibles propuestas de solución, respondiendo a las preguntas sugeridas.
         """
         
-        let fullText = "\(firstNormalText)\(firstListText)\(secondNormalText)\(secondListText)\(thirdNormalText)\(thirdListText)\(fourthNormalText)\(fourthListText)"
+        let fullText = "\(firstNormalText)\(firstListText)\(secondNormalText)\(secondListText)\(thirdNormalText)\(fourthNormalText)\(fourthListText)"
         
         let attributedText = NSMutableAttributedString(string: fullText)
         
@@ -98,7 +91,7 @@ class ActividadesViewController: UIViewController {
         let thirdNormalTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count, length: thirdNormalText.count)
         attributedText.addAttributes([.font: boldFont, .paragraphStyle: thirdParagraphStyle], range: thirdNormalTextRange)
         
-        let fourthNormalTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count + thirdListText.count, length: fourthNormalText.count)
+        let fourthNormalTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count, length: fourthNormalText.count)
         attributedText.addAttributes([.font: boldFont, .paragraphStyle: fourthParagraphStyle], range: fourthNormalTextRange)
         
         // Cambiar el tamaño de fuente para los textos en lista y ajustar el espacio antes
@@ -110,15 +103,14 @@ class ActividadesViewController: UIViewController {
         let secondListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count, length: secondListText.count)
         attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: secondListTextRange)
         
-        let thirdListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count, length: thirdListText.count)
-        attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: thirdListTextRange)
-        
-        let fourthListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count + thirdListText.count, length: fourthListText.count)
+        let fourthListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count , length: fourthListText.count)
         attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: fourthListTextRange)
                         
-        textView1.attributedText = attributedText
+        textView.attributedText = attributedText
     }
     
         
 
 }
+
+

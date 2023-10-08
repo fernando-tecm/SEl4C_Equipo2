@@ -1,60 +1,76 @@
 //
-//  ActividadesViewController.swift
+//  Actividad2ViewControler.swift
 //  sel
 //
-//  Created by José Andrés Rodríguez Ruiz on 04/10/23.
+//  Created by José Andrés Rodríguez Ruiz on 07/10/23.
 //
 
 import UIKit
 
-
-
-class ActividadesViewController: UIViewController {
+class Actividad2ViewControler: UIViewController{
     
-    
-    @IBOutlet weak var textView1: UITextView!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let bulletPoint: String = "\u{2022}" // El carácter de viñeta
                 
-        let firstNormalText = "1.Haz una lluvia de ideas sobre problemas sociales o ambientales que se dan en tu entorno."
+        let firstNormalText = "1.  Reflexiona acerca de los problemas que identificaste en la Actividad 1. Teniéndolos en mente, haz una investigación sobre los Objetivos de Desarrollo Sostenible. Te sugerimos los siguientes enlaces:"
         
         let firstListText = """
-        \n\(bulletPoint) ¿Cuáles identificas?
-        \(bulletPoint) Mínimo deben poder identificar 5 problemáticas.
-        \(bulletPoint) ¿Cómo te afectan estos problemas? ¿Has escuchado que le afecten a alguien cercano?
-        \(bulletPoint) ¿Por qué se consideran un problema?
+        \n\(bulletPoint) <a href="https://www.youtube.com/watch?v=MCKH5xk8X-g">Vínculo a Youtube?</a>
+        \(bulletPoint) <a href="https://www.undp.org/es/sustainable-development-goals"> Vínculo a UNDP </a>
         """
         
-        let secondNormalText = "\n 2.-Ahora, entrevista a una persona respecto a la misma idea:"
+        let secondNormalText = "\n Revisa cada uno de los objetivos y sus metas e investiga como es que estos se relacionan con los problemas que identificaste."
         
         let secondListText = """
-        \n\(bulletPoint) ¿Qué problemas ambientales o sociales identificas en tu casa, colonia o ciudad o país?
-        \(bulletPoint) ¿Por qué son un problema?
-        \(bulletPoint) ¿Quiénes intervienen en el problema?
-        \(bulletPoint) ¿Te has visto afectado por este problema? ¿Cómo?
+        \n\(bulletPoint) ¿Cuál es el ODS que consideras se relaciona mejor con cada problematica?
+        \(bulletPoint) ¿Cómo se relaciona con estos temas?
+        \(bulletPoint) ¿Hay alguna meta de dicho ODS que de manera concreta hable de esta relación?
         """
         
-        let thirdNormalText = "\n3.Por último, has un recorrido por tu colonia o ciudad y registra lo que ves relacionado con la situación ambiental o social. Busca identificar situaciones que no te agraden o problemas ya identificados."
+
+        let thirdNormalText = "\n2.Los ODS nos permiten comprender como es que estas problemáticas son consideradas Retos y Desafíos para todo el Mundo, sin embargo, es importante que podamos conocer cuál es la situación actual. Como segunda parte de esta actividad, te pedimos que de las 5 problemáticas identificadas en la actividad 1, elijas 3 y realices una investigación que responda las siguientes preguntas:"
         
         let thirdListText = """
-        \n\(bulletPoint) ¿Que viste?
-        \(bulletPoint) ¿Dónde lo viste?
-        \(bulletPoint) ¿Había alguien ocasionándolo o atendiéndolo?
+        \n\(bulletPoint) ¿Cuál es la situación de estas problemáticas a nivel internacional, regional, nacional y local?
+        \(bulletPoint) ¿Hay registro de afectaciones en la vida de las personas?
+        \(bulletPoint) ¿Qué tanto afecta a tu localidad?
         """
         
-        let fourthNormalText = "\n¿Qué debes entregar?"
         
+        let fourthNormalText = "\n¿Con esta investigación, reflexiona sobre cuál es la problemática que consideras valioso atender. Debes conseguir elegir 1, para apoyarte en este proceso de elección, te sugerimos considerar:"
+
         let fourthListText = """
-        \n\(bulletPoint) Conclusión de la reflexión inicial
-        \(bulletPoint) Conclusión de la entrevista
-        \(bulletPoint) Tabla con el registro de lo observado
+        \n\(bulletPoint) Que sea un problema que afecte directamente a tu entorno
+        \(bulletPoint) Que tenga un impacto en la calidad de vida de las personas
+        \(bulletPoint) Que sea una problemática cercana a nosotros o a alguien que conozcamos
+        """
+        
+        let fifthNormalText = "\n 3.  Como último punto de esta actividad, y habiendo elegido 1 problemática, es necesario que hagas un Árbol de Causas y Consecuencias."
+       
+        let sixthNormalText = "\n Los problemas suelen ser como árboles, con causas que se enraízan en la sociedad y con ramas y hojas que se dividen en múltiples consecuencias que afectan a muchas personas, realidades y entornos. Tomemos de ejemplo la contaminación, la cual puede tener múltiples causas, y sus consecuencias pueden impactar tanto al medioambiente, como a las personas, el clima, la economía, el desarrollo de las ciudades, la salud, etc. Para poder hacer algo al respecto, es importante poder identificar qué es lo que está detonando los problemas, ya que solo así se podrán atender posibles consecuencias. \n Una vez hecha esta reflexión, haz una investigación que considere por lo menos 3 posibles causas del problema seleccionado, así como 5 posibles consecuencias. Es relevante que se tomes en cuenta sus consecuencias en el entorno, la sociedad, las personas, la economía u cualquier otra área de abordaje.\n Aunque se sugiere que la investigación sea documental, también es posible que te apoyes con entrevistas a especialistas, profesores, familiares o conocedores del tema. \n Una vez se haya hecho esta investigación, podrás hacer tu árbol de causas y consecuencias. El tronco del árbol es el problema seleccionado; las raíces son las causas; las ramas y hojas son las consecuencias. Puedes dividir las consecuencias por su impacto internacional, nacional y local. \n Se sugiere que esta representación sea gráfica y con base en las herramientas propias que tengas. \n\n En la parte inferior del árbol se sugiere respondas lo siguiente:"
+        
+        let fifthListText = """
+        \n\(bulletPoint) A partir de esta información, ¿Por qué es importante atender este problema?
+        """
+        
+        
+        let seventhNormalText = "\n¿Qué debes entregar?"
+        
+        let seventhListText = """
+        \n\(bulletPoint) Relación entre ODS y problemas ambientales
+        \(bulletPoint) Investigación sobre la situación internacional, nacional y local de las problemáticas
+        \(bulletPoint) Árbol de causas y consecuencias del problema seleccionado
         """
         
         let fullText = "\(firstNormalText)\(firstListText)\(secondNormalText)\(secondListText)\(thirdNormalText)\(thirdListText)\(fourthNormalText)\(fourthListText)"
         
         let attributedText = NSMutableAttributedString(string: fullText)
+        
+        
         
         // Estilo de párrafo para el primer texto normal con espacio después
         let firstParagraphStyle = NSMutableParagraphStyle()
@@ -116,9 +132,7 @@ class ActividadesViewController: UIViewController {
         let fourthListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count + thirdListText.count, length: fourthListText.count)
         attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: fourthListTextRange)
                         
-        textView1.attributedText = attributedText
+        textView.attributedText = attributedText
     }
-    
-        
-
 }
+

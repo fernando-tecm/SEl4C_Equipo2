@@ -1,58 +1,50 @@
 //
-//  ActividadesViewController.swift
+//  Act4ViewController.swift
 //  sel
 //
-//  Created by José Andrés Rodríguez Ruiz on 04/10/23.
+//  Created by José Andrés Rodríguez Ruiz on 07/10/23.
 //
 
 import UIKit
 
-
-
-class ActividadesViewController: UIViewController {
+class Act4ViewController: UIViewController{
     
-    
-    @IBOutlet weak var textView1: UITextView!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let bulletPoint: String = "\u{2022}" // El carácter de viñeta
                 
-        let firstNormalText = "1.Haz una lluvia de ideas sobre problemas sociales o ambientales que se dan en tu entorno."
+        let firstNormalText = "Una habilidad relevante de cualquier emprendedor social es que pueda comunicar su propuesta para sumar a más personas a la acción. Por ende, esta actividad tiene el objetivo de recibir retroalimentación de otras personas sobre la propuesta. \n\n Debes identificar a 1 persona que pudiera dar retroalimentación sobre la propuesta de solución. Puede sugerirse un familiar, vecino, profesor o alguien cercano. De preferencia busca a alguien que pudiera ser un posible usuario de tu propuesta de solución.\n\n Para realizar esta entrevista, se debe tener claridad de lo que se compartirá por lo que se sugiere que antes de reunirte con esta persona, tengas claro los siguientes puntos:"
         
         let firstListText = """
-        \n\(bulletPoint) ¿Cuáles identificas?
-        \(bulletPoint) Mínimo deben poder identificar 5 problemáticas.
-        \(bulletPoint) ¿Cómo te afectan estos problemas? ¿Has escuchado que le afecten a alguien cercano?
-        \(bulletPoint) ¿Por qué se consideran un problema?
+        \n\(bulletPoint) Nombre de la propuesta de solución
+        \(bulletPoint) Problema que atiende
+        \(bulletPoint) Lugar o personas que se ven actualmente afectadas por el problema en lo local
+        \(bulletPoint) Acción concreta que se propone
+        \(bulletPoint) Por qué es innovadora
+        \(bulletPoint) Quienes podrían sumarse a esta propuesta
         """
         
-        let secondNormalText = "\n 2.-Ahora, entrevista a una persona respecto a la misma idea:"
+        let secondNormalText = "\n Una vez se tenga esta información, se puede realizar la entrevista. Se sugiere que primero se presente la propuesta considerando los puntos anteriormente desarrollados. Después, será necesario detonar algunas preguntas para recibir retroalimentación:"
         
         let secondListText = """
-        \n\(bulletPoint) ¿Qué problemas ambientales o sociales identificas en tu casa, colonia o ciudad o país?
-        \(bulletPoint) ¿Por qué son un problema?
-        \(bulletPoint) ¿Quiénes intervienen en el problema?
-        \(bulletPoint) ¿Te has visto afectado por este problema? ¿Cómo?
+        \n\(bulletPoint) ¿Consideras que es una propuesta viable, es decir, que si puede realizarse?
+        \(bulletPoint) ¿Consideras que es una propuesta valiosa, es decir, que puede impactar positivamente en donde vivimos?
+        \(bulletPoint) ¿Te podrías sumar a la propuesta? ¿Cómo lo harías?
+        \(bulletPoint) ¿Qué sugerirías para que la propuesta fuera más viable, aplicable o tuviera un mayor impacto?
         """
         
-        let thirdNormalText = "\n3.Por último, has un recorrido por tu colonia o ciudad y registra lo que ves relacionado con la situación ambiental o social. Busca identificar situaciones que no te agraden o problemas ya identificados."
-        
-        let thirdListText = """
-        \n\(bulletPoint) ¿Que viste?
-        \(bulletPoint) ¿Dónde lo viste?
-        \(bulletPoint) ¿Había alguien ocasionándolo o atendiéndolo?
-        """
+        let thirdNormalText = "\n3 Deberás recabar esta información de tu entrevistado y hacer adecuaciones a tu propuesta en caso de haber tenido alguna retroalimentación valiosa."
         
         let fourthNormalText = "\n¿Qué debes entregar?"
         
         let fourthListText = """
-        \n\(bulletPoint) Conclusión de la reflexión inicial
-        \(bulletPoint) Conclusión de la entrevista
-        \(bulletPoint) Tabla con el registro de lo observado
+        \n\(bulletPoint) Video, Audio o Transcripción de las entrevistas
+        \(bulletPoint) Reflexión sobre la retroalimentación recibida
         """
         
-        let fullText = "\(firstNormalText)\(firstListText)\(secondNormalText)\(secondListText)\(thirdNormalText)\(thirdListText)\(fourthNormalText)\(fourthListText)"
+        let fullText = "\(firstNormalText)\(firstListText)\(secondNormalText)\(secondListText)\(thirdNormalText)\(fourthNormalText)\(fourthListText)"
         
         let attributedText = NSMutableAttributedString(string: fullText)
         
@@ -98,7 +90,7 @@ class ActividadesViewController: UIViewController {
         let thirdNormalTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count, length: thirdNormalText.count)
         attributedText.addAttributes([.font: boldFont, .paragraphStyle: thirdParagraphStyle], range: thirdNormalTextRange)
         
-        let fourthNormalTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count + thirdListText.count, length: fourthNormalText.count)
+        let fourthNormalTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count , length: fourthNormalText.count)
         attributedText.addAttributes([.font: boldFont, .paragraphStyle: fourthParagraphStyle], range: fourthNormalTextRange)
         
         // Cambiar el tamaño de fuente para los textos en lista y ajustar el espacio antes
@@ -110,15 +102,14 @@ class ActividadesViewController: UIViewController {
         let secondListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count, length: secondListText.count)
         attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: secondListTextRange)
         
-        let thirdListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count, length: thirdListText.count)
-        attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: thirdListTextRange)
-        
-        let fourthListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count + thirdListText.count, length: fourthListText.count)
+        let fourthListTextRange = NSRange(location: firstNormalText.count + firstListText.count + secondNormalText.count + secondListText.count + thirdNormalText.count, length: fourthListText.count)
         attributedText.addAttributes([.font: listFont, .paragraphStyle: listParagraphStyle], range: fourthListTextRange)
                         
-        textView1.attributedText = attributedText
+        textView.attributedText = attributedText
     }
     
         
 
 }
+
+
